@@ -1,5 +1,6 @@
 # Obfuscated CrackMe
 
+<!-- TODO: Rajouter les techniques d'obfuscation que vous avez implémentées dans la présentation -->
 
 ## Table of contents
 
@@ -9,7 +10,6 @@
   - [Control Flow obfuscation](#control-flow-obfuscation)
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
-
 
 ## Presentation
 
@@ -26,7 +26,8 @@
   - [Control Flow obfuscation](#Method1)
   - [Encrypted Obfuscation](#Method2)
   - [Time Based Password](#time-based-password)
-  - ?
+  - ptrace
+  - fonction and variable name randomised
 - Ethique
   - Aucun comportements malveillants dans l'exécutable.
 
