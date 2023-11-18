@@ -10,6 +10,7 @@
   - [Control Flow obfuscation](#control-flow-obfuscation)
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
+  - [pTrace](#ptrace)
 
 ## Presentation
 
@@ -26,7 +27,7 @@
   - [Control Flow obfuscation](#Method1)
   - [Encrypted Obfuscation](#Method2)
   - [Time Based Password](#time-based-password)
-  - ptrace
+  - [pTrace](#ptrace)
   - fonction and variable name randomised
 - Ethique
   - Aucun comportements malveillants dans l'exécutable.
@@ -45,3 +46,10 @@ Pour réussir le CrackMe, les utilisateurs devront retrouver le code crypté et 
 
 Cette méthode permet de changer le mot de passe en fonction de l'heure d'execution.
 [Présentaion de la méthode](./Time_changing_password.c)
+
+## pTrace
+
+Cet appel système est utilisé par tous les debugger sous Linux. 
+Pour vérifier si un debugger est en train d'être utilisé sur notre CrackMe, il suffit de faire un appel à ce dernier au début de notre programme : 
+  - S'il renvoi une erreur (-1), alors il y a un debugger (exemple: gdb) qui est utilisé et le programme devra s'interrompre
+  - S'il renvoi autre chose, le porgramme n'est pas en cours de debuggage et peut donc être utilisé normalement
