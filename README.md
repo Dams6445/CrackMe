@@ -11,6 +11,7 @@
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
   - [pTrace](#ptrace)
+  - [Pistes d'amélioration](#pistes-damélioration)
 
 ## Presentation
 
@@ -53,3 +54,19 @@ Cet appel système est utilisé par tous les debugger sous Linux.
 Pour vérifier si un debugger est en train d'être utilisé sur notre CrackMe, il suffit de faire un appel à ce dernier au début de notre programme : 
   - S'il renvoi une erreur (-1), alors il y a un debugger (exemple: gdb) qui est utilisé et le programme devra s'interrompre
   - S'il renvoi autre chose, le porgramme n'est pas en cours de debuggage et peut donc être utilisé normalement
+
+## Pistes d'amélioration
+
+- Obfuscation de Contrôle de Flux: Modifiez la structure de contrôle du programme pour la rendre moins linéaire et plus difficile à suivre. Par exemple, l'utilisation de sauts indirects, de tables de sauts, ou l'insertion de code mort. (A améliorer)
+
+- Obfuscation des Données: Changez la façon dont les données sont stockées et utilisées. Par exemple, utiliser des encodages personnalisés pour les chaînes de caractères ou diviser des variables en plusieurs morceaux stockés séparément.
+
+- Cryptage de Chaînes: Les chaînes de caractères peuvent être cryptées dans le code binaire et déchiffrées en temps réel lors de l'exécution. Cela rend difficile la compréhension du but de certaines parties du code sans exécuter le programme. (A améliorer)
+
+- Incorporation de Code Auto-Modifiant: Le code qui modifie son propre comportement en cours d'exécution peut semer la confusion et compliquer le reverse engineering.
+
+- Utilisation de Macros et de Fonctions Inline Complexes: L'utilisation intensive de macros et de fonctions inline peut rendre le code source visuellement complexe et difficile à suivre.
+
+- Anti-Debugging et Anti-Tampering: Des techniques telles que la vérification de l'intégrité du code ou l'introduction de routines de détection de débogage peuvent rendre l'analyse plus compliquée.
+
+- Packers et Compresseurs: Utiliser des packers ou des compresseurs pour réduire la lisibilité du code binaire. Cependant, des outils comme Ghidra sont souvent capables de décompresser ou de déballer ces programmes.
