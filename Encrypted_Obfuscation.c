@@ -2,22 +2,18 @@
 #include <string.h>
 #include <stdlib.h>
 
-int hexCharToValue(char c) {
-    if (c >= '0' && c <= '9') return c - '0';
-    if (c >= 'a' && c <= 'f') return 10 + c - 'a';
-    if (c >= 'A' && c <= 'F') return 10 + c - 'A';
-    return 0; // Not a valid hexadecimal character
-}
+//Fonction à définir en assembler pour définir le mot de passé crypté ainsi que la clé de cryptage
+void xorEncrypt(const char *input, const char *key, unsigned char *output, int *length) {
+    int inputLen = strlen(input);
+    int keyLen = strlen(key);
 
-void hexStringToBytes(const char *hexString, unsigned char *bytes, int *length) {
-    *length = 0;
-    while (*hexString && *(hexString + 1)) {
-        int value = hexCharToValue(*hexString++) << 4;
-        value |= hexCharToValue(*hexString++);
-        bytes[(*length)++] = (unsigned char)value;
+    for (int i = 0; i < inputLen; i++) {
+        output[i] = input[i] ^ key[i % keyLen];
     }
+    *length = inputLen; // Définir la longueur réelle du texte chiffré
 }
 
+//Fonction à définir en assembler pour décrypter le mot de passé crypté
 void xorDecrypt(const unsigned char *input, int length, char *output, const char *key) {
     int keyLen = strlen(key);
 
@@ -30,22 +26,22 @@ void xorDecrypt(const unsigned char *input, int length, char *output, const char
 
 int main() {
     char password[100];
-    //Still need to hide this from strings
-    const char *encryptedHex = "1e1c28171c19292a160a1a163901"; //encrypted version of secretPassword
-    const char *key = "myKey"; // Replace with your key
-    unsigned char encryptedBytes[100];
+    const char *secretPassword = "secretPassword";
+    const char *key = "myKey";
+    unsigned char encryptedBytes[100] = {0}; // Initialisez avec des zéros
     int encryptedLength;
-    char *decrypted = malloc(100 * sizeof(char));   // Make sure this is large enough to hold the decrypted text
+
+    xorEncrypt(secretPassword, key, encryptedBytes, &encryptedLength);
+
+    char *decrypted = malloc(100 * sizeof(char));
 
     printf("Enter the password: ");
     fgets(password, sizeof(password), stdin);
+    password[strcspn(password, "\n")] = 0; // Retirer le caractère de saut de ligne
 
-    // Remove the newline character if it exists
-    password[strcspn(password, "\n")] = 0;
-
-    // Decrypt the secret password
-    hexStringToBytes(encryptedHex, encryptedBytes, &encryptedLength);
     xorDecrypt(encryptedBytes, encryptedLength, decrypted, key);
+
+    printf("Decrypted: %s\n", decrypted);
 
     if (strcmp(password, decrypted) == 0) {
         printf("OK\n");
@@ -53,11 +49,8 @@ int main() {
         printf("Incorrect password!\n");
     }
 
-    // Overwrite the sensitive data
-    memset(decrypted, 0, 100 * sizeof(char));
-
-    // Free the memory
-    free(decrypted);
+    memset(decrypted, 0, 100 * sizeof(char)); // Effacer les données sensibles
+    free(decrypted); // Libérer la mémoire
 
     return 0;
 }
