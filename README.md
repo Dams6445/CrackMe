@@ -11,6 +11,7 @@
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
   - [pTrace](#ptrace)
+  - [Options gcc](#options-gcc)
   - [Pistes d'amélioration](#pistes-damélioration)
 
 ## Presentation
@@ -54,6 +55,18 @@ Cet appel système est utilisé par tous les debugger sous Linux.
 Pour vérifier si un debugger est en train d'être utilisé sur notre CrackMe, il suffit de faire un appel à ce dernier au début de notre programme : 
   - S'il renvoi une erreur (-1), alors il y a un debugger (exemple: gdb) qui est utilisé et le programme devra s'interrompre
   - S'il renvoi autre chose, le porgramme n'est pas en cours de debuggage et peut donc être utilisé normalement
+
+## Options gcc
+
+Pour dissimuler des techniques d'obfuscation, on pourrait utiliser les options d'optimisation -02 et -03 : 
+
+```powershell
+gcc -O2 -o votre_programme votre_source.c
+```
+et
+```powershell
+gcc -O3 -o votre_programme votre_source.c
+```
 
 ## Pistes d'amélioration
 
