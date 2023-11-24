@@ -58,12 +58,8 @@ int main(int argc, char const *argv[])
     int* var3;
     void* var4; // key
 
-    my_func004(key, var4);
-    printf("my_func004 key : %s\n", key);
-    printf("my_func004 var4 : %p\n", var4);
     my_func002(password, var1);
-    printf("my_func002 password : %s\n", password);
-    printf("my_func002 var1 : %p\n", var1);
+        my_func004(key, var4);
     my_func005(password, 0x8c);
     my_func009(password, "HOME");
     my_func011(password, var3, var2);
