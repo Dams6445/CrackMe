@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
     int encryptedLengthC;
     char *decryptedC = malloc(100 * sizeof(char));
     char *decryptedASM = malloc(100 * sizeof(char));
-    Xor_Encrypt(secretPassword, key, encryptedBytesASM, &encryptedLengthASM); //pb length out, mettre lenght dans pointer plutot que r10
+    Xor_Encrypt(secretPassword, key, encryptedBytesASM, &encryptedLengthASM);
     xorEncrypt(secretPassword, key, encryptedBytesC, &encryptedLengthC);
     printf("Encrypted C: %s\n", encryptedBytesC);
     printf("Encrypted ASM: %s\n", encryptedBytesASM);
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
         printf("Encrypt NOT OK!\n");
     }
     xorDecrypt(encryptedBytesC, encryptedLengthC, decryptedC, key);
-    Xor_Decrypt(encryptedBytesASM, encryptedLengthASM, decryptedASM, key); //pb length + autre chose
+    Xor_Decrypt(encryptedBytesASM, encryptedLengthASM, decryptedASM, key);
     printf("decrypted C : %s\n", decryptedC);
     printf("decrypted ASM : %s\n", decryptedASM);
     return 0;

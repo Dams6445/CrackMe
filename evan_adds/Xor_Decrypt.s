@@ -2,7 +2,7 @@ global Xor_Decrypt
 section .text
 Xor_Decrypt:
     xor     r9, r9
-    mov     r8, r10
+    mov     r8, rcx
     xor     r11, r11
     push    r12
     mov     r12, rdx
@@ -19,7 +19,7 @@ loop:
     mov     rax, r11
     div     r9
     movzx   eax, byte [rdi + r11]
-    movzx   ebx, byte [r10 + rdx]
+    movzx   ebx, byte [rcx + rdx]
     xor     eax, ebx
     mov     [r12 + r11], al
     inc     r11
