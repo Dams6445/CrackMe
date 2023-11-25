@@ -2,7 +2,7 @@ global Xor_Encrypt
 section .text
 Xor_Encrypt:
     xor     r8, r8
-    xor     r9, r9
+    xor     r10, r10
     mov     r11, rdi
     push    r12
     push    r13
@@ -19,7 +19,7 @@ count_input:
 count_key:
     cmp     byte [r12], 0
     je      loop
-    inc     r9
+    inc     r10
     inc     r12
     jmp     count_key
 loop:
@@ -27,7 +27,7 @@ loop:
     jge     done
     xor     rdx, rdx
     mov     rax, r14
-    div     r9
+    div     r10
     movzx   eax, byte [rdi + r14]
     movzx   ebx, byte [rsi + rdx]
     xor     eax, ebx
@@ -35,7 +35,7 @@ loop:
     inc     r14
     jmp     loop
 done:
-    mov     [r10], r8
+    mov     [rcx], r8
     pop     r14
     pop     r13
     pop     r12
