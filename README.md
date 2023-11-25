@@ -8,6 +8,7 @@
   - [Table of contents](#table-of-contents)
   - [Presentation](#presentation)
   - [Control Flow obfuscation](#control-flow-obfuscation)
+  - [Plan fonctions raph adds](#plan-fonctions-raph-adds)
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
   - [pTrace](#ptrace)
@@ -38,6 +39,24 @@
 
 L'objectif de cette méthode d'obfuscation est de générer des comportements perturbateurs dans le code.
 [Présentaion de la méthode](./Control_Flow_Obfucation.c)
+
+## Plan fonctions raph adds
+
+- [function001](./raph_adds/func001) -> vide
+- [function002](./raph_adds/func002) -> chaine de caractère "crack_en"
+- [function003](./raph_adds/func003) -> vide
+- [function004](./raph_adds/func004) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win -> A FAIRE
+- [function005](./raph_adds/func005) -> caractère changeant chaque minute (offset 0x20)
+- [function006](./raph_adds/func006) -> vide
+- [function007](./raph_adds/func007) -> Xor encrypt
+- [function008](./raph_adds/func008) -> vide
+- [function009](./raph_adds/func009) -> récupération du répertoire HOME
+- [function010](./raph_adds/func010) -> vide
+- [function011](./raph_adds/func011) -> caractère changeant chaque minute (offset 0x43)
+- [function012](./raph_adds/func012) -> vide
+- [function013](./raph_adds/func013) -> Xor decrypt
+- [function014](./raph_adds/func014) -> vide
+
 
 ## Encrypted Obfuscation
 
