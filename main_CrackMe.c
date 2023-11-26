@@ -4,20 +4,20 @@
 #include <time.h>
 #include <string.h>
 
-void *my_func001(char *var);
-int my_func002(char *string, void *char1); // prefixe
-int **my_func003(char *string, double *var1, size_t var2);
-int my_func004(char* string2, void *char3); // key
-int my_func005(char *string, int var); // first char
-long my_func006(char *string, int var1, char *var2);
+int my_func001(char* var);
+int my_func002(char* string, void* char2); // prefixe
+int my_func003(char* string, double* var1, int var2);
+int my_func004(char* string, short* var1, int var2); // key
+int my_func005(char* string, int var); // first char
+long my_func006(char* string, int var1, char* var2);
 void my_func007(const char *string1, const char *string2, unsigned char *string3, int var); // Xor encrypt
-int my_func008(char *string, long var);
-char *my_func009(char *string, char *varenv); // home env var
-char **my_func010(char *string, char offset);
-void my_func011(char *string, int *var1, short var2); // second char
-float my_func012(char *string, char *var);
+int my_func008(char* string, long var);
+char* my_func009(char* string, char* varenv); // home env var
+char** my_func010(char* string, char offset);
+void my_func011(char* string, int* var1, short var2); // second char
+float my_func012(char* string, char* var);
 long *my_func013(const char *string1, int var, char *string2, const char *string3); // Xor decrypt
-int my_func014(char *string, char *var);
+int my_func014(char* string, char* var);
 
 // void Xor_Encrypt(const char *input, const char *key, unsigned char *output, int *length);
 
