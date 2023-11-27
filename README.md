@@ -42,14 +42,14 @@ L'objectif de cette méthode d'obfuscation est de générer des comportements pe
 
 ## Plan fonctions raph adds
 
-- [function001](./raph_adds/func001) -> vide
+- [function001](./raph_adds/func001) -> inutile
 - [function002](./raph_adds/func002) -> chaine de caractère "crack_en"
-- [function003](./raph_adds/func003) -> vide
+- [function003](./raph_adds/func003) -> inutile
 - [function004](./raph_adds/func004) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win -> A FAIRE
 - [function005](./raph_adds/func005) -> caractère changeant chaque minute (offset 0x20)
-- [function006](./raph_adds/func006) -> vide
+- [function006](./raph_adds/func006) -> inutile
 - [function007](./raph_adds/func007) -> Xor encrypt
-- [function008](./raph_adds/func008) -> vide
+- [function008](./raph_adds/func008) -> inutile
 - [function009](./raph_adds/func009) -> récupération du répertoire HOME
 - [function010](./raph_adds/func010) -> vide
 - [function011](./raph_adds/func011) -> caractère changeant chaque minute (offset 0x43)
