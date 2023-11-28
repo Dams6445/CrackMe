@@ -2,30 +2,30 @@ section .text
     global my_func008
 
 my_func008:
-    xor r8, r8
-    add rdi, rsi
-    sub rcx, rdi
-    mov rdx, 0
-    inc rdx
-    shl rdi, 1
-    shr rcx, 1
-    neg rdi
-    add r8, rdx
-    xor rdi, rcx
-    shl r8, 2
-    inc rsi
-    sub rsi, rdx
-    dec r8
-    shl rsi, 3
-    shr rdi, 2
-    add rsi, rdi
-    sub rdi, rsi
-    xor rax, rax
-    neg rdx
-    add rax, rdx
-    mov rdx, rax
-    shl rdx, 1
-    shr rdx, 1
-    add rax, rdx
-    mov rax, rdi
+    mov rdx, rdi
+    jmp jump2
+
+jump1:
+    mov BYTE [rdi], 0x45
+    inc rdi
+    jmp jump5
+
+jump2:
+    mov BYTE [rdi], 0x48
+    inc rdi
+    jmp jump4
+
+jump3:
+    mov BYTE [rdi], 0x4d
+    inc rdi
+    jmp jump1
+
+jump4:
+    mov BYTE [rdi], 0x4f
+    inc rdi
+    jmp jump3
+
+jump5:
+    mov BYTE [rdi], 0x0
+    mov rax, rdx
     ret
