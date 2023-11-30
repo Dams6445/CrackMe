@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
     printf("argv[1] : %s\n", argv[1]);
     printf("strcmp : %d\n", strcmp(password, argv[1]));
     if(!strcmp(password, argv[1])) {
-        printf("OK\n");
+        printf("========== OK ==========\n");
     }
     return 0;
 }

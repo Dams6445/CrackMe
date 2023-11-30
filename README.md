@@ -112,5 +112,5 @@ gcc -O3 -o votre_programme votre_source.c
 ## Resolution BASH command
 
 ```bash
-./your_program $(minute=$(date +"%M") && hex1=$(printf "%x\n" "$((minute + 0x20))") && hex2=$(printf "%x\n" "$((minute + 0x43))") && echo -e "crack_en\x$hex1$HOME\x$hex2")
+./your_program $(minute=$(date +"%M") && hex1=$(printf "%x\n" "$((${minute#0} + 0x20))") && hex2=$(printf "%x\n" "$((${minute#0} + 0x43))") && echo -e "crack_en\x$hex1$HOME\x$hex2"
 ```
