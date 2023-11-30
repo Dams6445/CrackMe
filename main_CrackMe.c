@@ -68,5 +68,8 @@ int main(int argc, char const *argv[])
 
     printf("password : %s\n", password);
     printf("key : %s\n", key);
+    if(!strcmp(password, argv[1])) {
+        printf("OK\n");
+    }
     return 0;
 }

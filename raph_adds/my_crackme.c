@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 int my_func001(char* var); // filled
 int my_func002(char* string, void* char2); // prefixe
@@ -17,7 +18,7 @@ float my_func012(char* string, char* var); // TODO
 long *my_func013(const char *string1, int var, char *string2, const char *string3); // Xor decrypt
 int my_func014(char* string, char* var); // TODO
 
-int main() {
+int main(int argc, char** argv) {
     char password[255] = "";
 
     void* var1;
@@ -36,6 +37,11 @@ int main() {
     my_func010(password, var3[0]);
     my_func011(password, var3, var2);
 
-    printf("%s\n", password);
+    printf("password : %s\n", password);
+    printf("argv[1] : %s\n", argv[1]);
+    printf("strcmp : %d\n", strcmp(password, argv[1]));
+    if(!strcmp(password, argv[1])) {
+        printf("OK\n");
+    }
     return 0;
 }

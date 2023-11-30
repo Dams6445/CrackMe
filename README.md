@@ -14,6 +14,7 @@
   - [pTrace](#ptrace)
   - [Options gcc](#options-gcc)
   - [Pistes d'amélioration](#pistes-damélioration)
+  - [Resolution bash command](#resolution-bash-command)
 
 ## Presentation
 
@@ -106,3 +107,10 @@ gcc -O3 -o votre_programme votre_source.c
 - Anti-Debugging et Anti-Tampering: Des techniques telles que la vérification de l'intégrité du code ou l'introduction de routines de détection de débogage peuvent rendre l'analyse plus compliquée.
 
 - Packers et Compresseurs: Utiliser des packers ou des compresseurs pour réduire la lisibilité du code binaire. Cependant, des outils comme Ghidra sont souvent capables de décompresser ou de déballer ces programmes.
+
+
+## Resolution BASH command
+
+```bash
+./your_program $(minute=$(date +"%M") && hex1=$(printf "%x\n" "$((minute + 0x20))") && hex2=$(printf "%x\n" "$((minute + 0x43))") && echo -e "crack_en\x$hex1$HOME\x$hex2")
+```
