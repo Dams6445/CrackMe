@@ -57,6 +57,10 @@ L'objectif de cette méthode d'obfuscation est de générer des comportements pe
 - [function013](./raph_adds/func013) -> Xor decrypt
 - [function014](./raph_adds/func014) -> vide
 
+## Deadcode
+
+[function015](./enzo_adds/my_func015.s) -> fonction strcmp avec deadcode
+
 
 ## Encrypted Obfuscation
 
