@@ -32,7 +32,7 @@ bool isUnderDebugger()
     memset(path, 0, PATH_MAX + 1);
     readlink(parent_path.c_str(), path, PATH_MAX);
 
-    std::vector<std::string> debuggers = {"gdb", "lldb-server", "radare2"};
+    std::vector<std::string> debuggers = {"gdb", "lldb-server", "radare2", "cutter", "ghidra", "windbg"};
 
     for (auto &p: debuggers)
     {
