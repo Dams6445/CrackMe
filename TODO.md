@@ -17,9 +17,15 @@
 
 ## TODO 2 : strcmp avec deadcode pour comparer entrée user + parties fixe du passsword
 
+Done, renvoi 0 si identique et -1 si différent
+
 ## TODO 3 : crypter les random caracters + HOME à cacher
 
+  Done
+
 ## TODO 4 : crypter le mot de passe + CARACTÈRES SPÉCIAUX CLÉ dans les fichiers ASM
+
+Reste plus que la fonction sprintf() de evan en nasm elf64 + crypter le prefixe cracken
 
 ## TODO 5 : Rapport de fin de crackMe
 
