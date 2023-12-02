@@ -1,59 +1,11 @@
+section .data
+    ; The string "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" in UTF-8 encoding
+    msg db 0x24, 0xCE, 0xB5, 0xE2, 0x82, 0xB3, 0xE2, 0x82, 0xB9, 0xC2, 0xA2, 0x68, 0x48, 0xCE, 0xB9, 0xCC, 0x87, 0x64, 0xE2, 0x82, 0xAC, 0xCE, 0xB7, 0xE2, 0x82, 0xAD, 0x65, 0xC2, 0xA5, 0xE2, 0x82, 0xA3, 0x6F, 0x72, 0xE2, 0x82, 0xAE, 0x68, 0x65, 0xE2, 0x82, 0xA9, 0x69, 0xE2, 0x82, 0xA6, 0x0
+    msg_len equ $ - msg
+
 section .text
-    global my_func002
+    global get_string
 
-;00 00 00 00 00 3A 0B 31
-;C  r  a  c  k  _  e  n
-
-my_func002:
-    cmp BYTE [rdi], 0x0
-    je jump3
-    inc rdi
-    jmp my_func002
-
-jump0:
-    inc rdi
-    mov BYTE [rdi], 0x0
-    jmp jump9
-
-jump1:
-    inc rdi
-    mov BYTE [rdi], 0x3a ;xor _ 0x5f
-    jmp jump5
-
-jump2:
-    inc rdi
-    mov BYTE [rdi], 0x00 ;xor a 0x61
-    jmp jump4
-
-jump3:
-    mov BYTE [rdi], 0x00 ;xor C 0x43
-    jmp jump8
-
-jump4:
-    inc rdi
-    mov BYTE [rdi], 0x00 ;xor c 0x63
-    jmp jump6
-
-jump5:
-    inc rdi
-    mov BYTE [rdi], 0x0B ;xor e 0x65
-    jmp jump7
-
-jump6:
-    inc rdi
-    mov BYTE [rdi], 0x00 ;xor k 0x6b
-    jmp jump1
-
-jump7:
-    inc rdi
-    mov BYTE [rdi], 0x31 ;xor n 0x6e
-    jmp jump0
-
-jump8:
-    inc rdi
-    mov BYTE [rdi], 0x00 ;xor r 0x72
-    jmp jump2
-
-jump9:
-    mov rax, 0x16f
-    ret
+get_string:
+    mov rax, msg        ; Mettre l'adresse de 'msg' dans rax
+    ret                 ; Retourner avec cette adresse
