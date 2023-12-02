@@ -1,10 +1,18 @@
 #include <stdio.h>
 
 // Déclaration de la fonction externe
-extern char* get_string();
+int get_string(int* string1, char* string2);
+// extern char* get_string();
 
 int main() {
-    char* str = get_string();  // Appel de la fonction NASM
-    printf("coucou c'est : %s\n", str);       // Afficher la chaîne
+    int test[255] = {0};
+    char password2[255] = "";
+
+    get_string(test, password2);
+    char password1[255] = "";
+    // cast de test en char*
+    sprintf(password1, "%s", (char*)test);
+    printf("password1 : %s\n", password1);
+    printf("password2 : %s\n", password2);
     return 0;
 }

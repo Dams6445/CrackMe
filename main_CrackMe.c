@@ -60,6 +60,8 @@ int main(int argc, char const *argv[])
     void* var4;
 
     my_func002(password, var1);
+    printf("password : %s\n", password);
+    printf("var1 : %s\n", var1);
     my_func004(key, var4, 0xe);
     my_func005(password, 0x8c);
     my_func008(var5, 0x8);
