@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/ptrace.h>
+// #include <sys/ptrace.h>
 #include <time.h>
 #include <string.h>
 
@@ -19,11 +19,63 @@ float my_func012(char* string, char* var);
 long *my_func013(const char *string1, int var, char *string2, const char *string3); // Xor decrypt
 int my_func014(char* string, char* var);
 
+int checkDebug() {
+    FILE *fp;
+    char path[1035];
+    int traceFound = 0;
+
+    // Liste des traceurs à vérifier
+    const char* traceurs[] = {"strace", "ltrace", "dtrace", "ptrace", "[^a-zA-Z]gdb[^a-zA-Z]", "ghidra", "radare2", "r2", "lldb", "objdump", "[^a-zA-Z]nm[^a-zA-Z]", "readelf", "strings", "objcopy", "objd", "cutter", "ida", "gdbserver", "lldb-server", "binaryninja", "valgrind", "hopper", "peid"};
+    int nbTraceurs = sizeof(traceurs) / sizeof(traceurs[0]);
+
+    // Construit la commande pour vérifier tous les traceurs.
+    char commande[256] = "lsof | grep -E '";
+    for (int i = 0; i < nbTraceurs; ++i) {
+        strcat(commande, traceurs[i]);
+        if (i < nbTraceurs - 1) {
+            strcat(commande, "|");
+        }
+    }
+    strcat(commande, "'");
+
+    // Exécute la commande.
+    fp = popen(commande, "r");
+    if (fp == NULL) {
+        printf("Échec de l'exécution de la commande\n");
+        return 1;
+    }
+
+    // Lit la sortie de la commande.
+    while (fgets(path, sizeof(path), fp) != NULL) {
+        for (int i = 0; i < nbTraceurs; ++i) {
+            if (strstr(path, traceurs[i])) {
+                printf("Danger %s détecté\n", traceurs[i]);
+                traceFound = 1;
+            }
+        }
+    }
+    if (traceFound == 1) {
+        printf("traceur détecté\n");
+        return 1;
+    } else {
+        printf("Aucun traceur détecté\n");
+    }
+
+    // Ferme le flux.
+    pclose(fp);
+    return 0;
+}
+
 int main(int argc, char const *argv[])
 {
-    // Tentative d'attachement avec ptrace pour empêcher le debugging
-    if (ptrace(PTRACE_TRACEME, 0, 1, 0) == -1) {
-        printf("Debugging détecté !\n");
+    // // Tentative d'attachement avec ptrace pour empêcher le debugging
+    // if (ptrace(PTRACE_TRACEME, 0, 1, 0) == -1) {
+    //     printf("Debugging détecté !\n");
+    //     return 1;
+    // }
+
+    // Tentative de vérification de l'existence de traceurs
+    if (checkDebug() == 1) {
         return 1;
     }
 
