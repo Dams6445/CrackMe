@@ -19,29 +19,6 @@ float my_func012(char* string, char* var);
 long *my_func013(const char *string1, int var, char *string2, const char *string3); // Xor decrypt
 int my_func014(char* string, char* var);
 
-// void Xor_Encrypt(const char *input, const char *key, unsigned char *output, int *length);
-
-// void Xor_Decrypt(const char *input, int length, char *output, const char *key);
-
-// //Fonction à définir en assembler pour définir le mot de passé crypté ainsi que la clé de cryptage
-// void xorEncrypt(const char *input, const char *key, unsigned char *output, int *length) {
-//     int inputLen = strlen(input);
-//     int keyLen = strlen(key);
-//     for (int i = 0; i < inputLen; i++) {
-//         output[i] = input[i] ^ key[i % keyLen];
-//     }
-//     *length = inputLen; // Définir la longueur réelle du texte chiffré
-// }
-
-// //Fonction à définir en assembler pour décrypter le mot de passé crypté
-// void xorDecrypt(const unsigned char *input, int length, char *output, const char *key) {
-//     int keyLen = strlen(key);
-//     for (int i = 0; i < length; i++) {
-//         output[i] = input[i] ^ key[i % keyLen];
-//     }
-//     output[length] = '\0'; // Null-terminate the decrypted string
-// }
-
 int main(int argc, char const *argv[])
 {
     // Tentative d'attachement avec ptrace pour empêcher le debugging
@@ -49,6 +26,12 @@ int main(int argc, char const *argv[])
         printf("Debugging détecté !\n");
         return 1;
     }
+
+    // Gestion de l'entrée utilisateur 
+    char userInput[255] = argv[1];
+    //appel asm function to crypt
+    my_func36(userInput, cryptedInput)
+
 
     char password[255] = "";
     char key[255] = "";
