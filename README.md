@@ -9,12 +9,13 @@
   - [Presentation](#presentation)
   - [Control Flow obfuscation](#control-flow-obfuscation)
   - [Plan fonctions raph adds](#plan-fonctions-raph-adds)
+  - [Deadcode](#deadcode)
   - [Encrypted Obfuscation](#encrypted-obfuscation)
   - [Time Based Password](#time-based-password)
   - [pTrace](#ptrace)
   - [Options gcc](#options-gcc)
   - [Pistes d'amélioration](#pistes-damélioration)
-  - [Resolution bash command](#resolution-bash-command)
+  - [Resolution BASH command](#resolution-bash-command)
 
 ## Presentation
 
@@ -46,7 +47,7 @@ L'objectif de cette méthode d'obfuscation est de générer des comportements pe
 - [function001](./raph_adds/func001) -> inutile
 - [function002](./raph_adds/func002) -> chaine de caractère "crack_en"
 - [function003](./raph_adds/func003) -> inutile
-- [function004](./raph_adds/func004) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win -> A FAIRE
+- [function004](./raph_adds/func004) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win . Arg1 contient la clé et arg2 contient une fausse clé
 - [function005](./raph_adds/func005) -> caractère changeant chaque minute (offset 0x20)
 - [function006](./raph_adds/func006) -> inutile
 - [function007](./raph_adds/func007) -> Xor encrypt
