@@ -6,7 +6,7 @@ extern int my_strcmp(const char *str1, const char *str2);
 
 void test_strcmp(const char *str1, const char *str2) {
     int result_libc = strcmp(str1, str2);
-    int result_my = my_strcmp(str1, str2);
+    int result_my = my_func015(str1, str2);
 
     printf("Comparaison de '%s' et '%s'\n", str1, str2);
     printf("Libc strcmp: %d\n", result_libc);
