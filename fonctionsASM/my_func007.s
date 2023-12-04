@@ -1,6 +1,6 @@
-global Xor_Encrypt
+global my_func007
 section .text
-Xor_Encrypt:
+my_func007:
     xor     r8, r8
     xor     r10, r10
     mov     r11, rdi

@@ -1,11 +1,11 @@
 section .text
-    global get_string
+    global my_func004
 
-get_string:
+my_func004:
     cmp BYTE [rdi], 0x0
     je jump32
     inc rdi
-    jmp get_string
+    jmp my_func004
 
 jump01:
     inc rdi

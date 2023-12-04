@@ -1,7 +1,7 @@
 section .text
-    global my_strcmp
+    global my_func012
 
-my_strcmp:
+my_func012:
 
     ; Dead code - opérations inutiles pour complexifier
     xor r10, r10

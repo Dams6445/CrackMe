@@ -44,20 +44,22 @@ L'objectif de cette méthode d'obfuscation est de générer des comportements pe
 
 ## Plan fonctions raph adds
 
-- [function001](./raph_adds/func001) -> inutile
-- [function002](./raph_adds/func002) -> chaine de caractère "crack_en"
-- [function003](./raph_adds/func003) -> inutile
-- [function004](./raph_adds/func004) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win . Arg1 contient la clé et arg2 contient une fausse clé
-- [function005](./raph_adds/func005) -> caractère changeant chaque minute (offset 0x20)
-- [function006](./raph_adds/func006) -> inutile
-- [function007](./raph_adds/func007) -> Xor encrypt
-- [function008](./raph_adds/func008) -> inutile
-- [function009](./raph_adds/func009) -> récupération du répertoire HOME
-- [function010](./raph_adds/func010) -> vide
-- [function011](./raph_adds/func011) -> caractère changeant chaque minute (offset 0x43)
-- [function012](./raph_adds/func012) -> vide
-- [function013](./raph_adds/func013) -> Xor decrypt
-- [function014](./raph_adds/func014) -> vide
+- [function001](./fonctionsASM/my_func001.s) -> inutile
+- [function002](./fonctionsASM/my_func002.s) -> chaine de caractère "crack_en"
+- [function003](./fonctionsASM/my_func003.s) -> inutile
+- [function004](./fonctionsASM/my_func004.s) -> chaine de caractère "$ε₳₹¢hHι̇d€η₭e¥₣or₮he₩i₦" -> search hiden key for the win . Arg1 contient la clé et arg2 contient une fausse clé
+- [function005](./fonctionsASM/my_func005.s) -> caractère changeant chaque minute (offset 0x20)
+- [function006](./fonctionsASM/my_func006.s) -> inutile
+- [function007](./fonctionsASM/my_func007.s) -> Xor encrypt
+- [function008](./fonctionsASM/my_func008.s) -> inutile
+- [function009](./fonctionsASM/my_func009.s) -> récupération du répertoire HOME
+- [function011](./fonctionsASM/my_func011.s) -> caractère changeant chaque minute (offset 0x43)
+- [function012](./fonctionsASM/my_func012.s) -> my_strcmp
+- [test_bloc1](./fonctionsASM/test_blk1.s) -> my_strcmp
+- [test_bloc2](./fonctionsASM/test_blk2.s) -> my_strcmp
+- [test_bloc3](./fonctionsASM/test_blk3.s) -> my_strcmp
+
+
 
 ## Deadcode
 
