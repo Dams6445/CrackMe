@@ -1,6 +1,6 @@
 while [ true ] 
 do
     echo $(date +"%M")
-    arg=$(./passwd.sh) && ./my_crackme $arg
+    arg=$(./passwd.sh) && ./crack_en $arg
     sleep 60
 done
